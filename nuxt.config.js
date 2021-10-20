@@ -3,6 +3,7 @@ import { SITE } from './constants/site';
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -54,6 +55,7 @@ export default {
     '@nuxtjs/tailwindcss', // https://go.nuxtjs.dev/tailwindcss
     '@aceforth/nuxt-optimized-images', // https://marquez.co/docs/nuxt-optimized-images/
     '@nuxtjs/html-validator', // https://html-validator.nuxtjs.org/
+    'nuxt-vite', // https://vite.nuxtjs.org/
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
