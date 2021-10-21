@@ -76,14 +76,14 @@ export default {
       name: SITE.title,
       short_name: SITE.shortname,
       description: SITE.description,
-      lang: LANG_ARR[0],
+      lang: LANG_ARR[0].iso,
     },
     meta: {
       name: SITE.title,
       author: SITE.author,
       description: SITE.description,
       theme_color: SITE.primaryColor,
-      lang: LANG_ARR[0],
+      lang: LANG_ARR[0].iso,
       ogHost: SITE.host,
       // ogTitle: SITE.title,
     },
@@ -121,11 +121,11 @@ export default {
   // i18n-module (https://i18n.nuxtjs.org/setup)
   i18n: {
     baseUrl: SITE.host,
-    defaultLocale: LANG_ARR[0],
+    defaultLocale: LANG_ARR[0].code,
     locales: LANG_ARR,
     seo: true,
     vueI18n: {
-      fallbackLocale: LANG_ARR[0],
+      fallbackLocale: LANG_ARR[0].code,
       messages: Object.assign(
         {},
         ...Object.keys(LOCALES).map((locale) => ({ [locale]: LOCALES[locale].messages }))
