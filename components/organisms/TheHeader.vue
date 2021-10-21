@@ -1,13 +1,8 @@
-<template functional>
-  <header
-    :ref="data.ref"
-    :class="[data.class, data.staticClass]"
-    :style="[data.style, data.staticStyle]"
-    v-bind="data.attrs"
-    v-on="listeners"
-  >
-    <div class="container mx-auto">
-      <p>Site header</p>
+<template>
+  <header>
+    <div class="container mx-auto flex justify-between">
+      <p>{{ $t('TheHeader.headline') }}</p>
+      <the-lang-switch />
     </div>
   </header>
 </template>

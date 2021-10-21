@@ -1,4 +1,10 @@
+import LOCALES from './constants/locales';
 import { SITE } from './constants/site';
+
+const LANG_ARR = Object.keys(LOCALES).map((locale) => ({
+  code: locale,
+  iso: LOCALES[locale].iso,
+}));
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -10,7 +16,7 @@ export default {
     title: SITE.title,
     titleTemplate: `%s | ${SITE.title}`,
     htmlAttrs: {
-      lang: SITE.langs[0],
+      lang: LANG_ARR[0],
     },
     meta: [
       { charset: 'utf-8' },
@@ -60,6 +66,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/pwa', // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/i18n', // https://i18n.nuxtjs.org/
     '@nuxtjs/sitemap', // * needs to be last (https://sitemap.nuxtjs.org/)
   ],
 
@@ -69,14 +76,14 @@ export default {
       name: SITE.title,
       short_name: SITE.shortname,
       description: SITE.description,
-      lang: SITE.langs[0],
+      lang: LANG_ARR[0],
     },
     meta: {
       name: SITE.title,
       author: SITE.author,
       description: SITE.description,
       theme_color: SITE.primaryColor,
-      lang: SITE.langs[0],
+      lang: LANG_ARR[0],
       ogHost: SITE.host,
       // ogTitle: SITE.title,
     },
@@ -109,5 +116,20 @@ export default {
   sitemap: {
     hostname: SITE.host,
     gzip: true,
+  },
+
+  // i18n-module (https://i18n.nuxtjs.org/setup)
+  i18n: {
+    baseUrl: SITE.host,
+    defaultLocale: LANG_ARR[0],
+    locales: LANG_ARR,
+    seo: true,
+    vueI18n: {
+      fallbackLocale: LANG_ARR[0],
+      messages: Object.assign(
+        {},
+        ...Object.keys(LOCALES).map((locale) => ({ [locale]: LOCALES[locale].messages }))
+      ),
+    },
   },
 };

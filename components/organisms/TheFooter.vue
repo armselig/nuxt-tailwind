@@ -1,13 +1,7 @@
-<template functional>
-  <footer
-    :ref="data.ref"
-    :class="[data.class, data.staticClass]"
-    :style="[data.style, data.staticStyle]"
-    v-bind="data.attrs"
-    v-on="listeners"
-  >
+<template>
+  <footer>
     <div class="container mx-auto">
-      <p>Site footer</p>
+      <p>{{ $t('TheFooter.headline') }}</p>
     </div>
   </footer>
 </template>
