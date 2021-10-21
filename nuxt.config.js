@@ -115,6 +115,6 @@ export default defineNuxtConfig({
 
   tailwindcss: {
     configPath: 'tailwind.config.cjs',
-    viewer: true, // not importable because uses CJS module. See also: https://github.com/nuxt-community/tailwindcss-module/issues/389
+    viewer: false, // Applied patch, but still not working. See also: https://github.com/nuxt-community/tailwindcss-module/issues/389
   },
 });
