@@ -1,6 +1,8 @@
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { defineNuxtConfig } from '@nuxt/bridge';
 import { SITE } from './constants/site';
 
-export default {
+export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   ssr: false,
@@ -110,4 +112,4 @@ export default {
     hostname: SITE.host,
     gzip: true,
   },
-};
+});
