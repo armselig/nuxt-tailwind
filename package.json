@@ -45,7 +45,7 @@
     "@nuxtjs/tailwindcss": "^4.2.0",
     "autoprefixer": "^10.3.7",
     "chalk": "^4.1.2",
-    "crossenv": "0.0.2-security",
+    "cross-env": "^7.0.3",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
