@@ -1,0 +1,11 @@
+diff --git a/node_modules/@nuxtjs/tailwindcss/dist/runtime/config-viewer.js b/node_modules/@nuxtjs/tailwindcss/dist/runtime/config-viewer.js
+index d03355c..61b2192 100644
+--- a/node_modules/@nuxtjs/tailwindcss/dist/runtime/config-viewer.js
++++ b/node_modules/@nuxtjs/tailwindcss/dist/runtime/config-viewer.js
+@@ -1,5 +1,5 @@
+ import {withoutTrailingSlash, withTrailingSlash} from "ufo";
+-import createServer from "tailwind-config-viewer/server";
++import createServer from "tailwind-config-viewer/server/index.js";
+ const server = createServer({
+   tailwindConfigProvider: () => process.nuxt ? process.nuxt.$config.tailwind.getConfig() : {}
+ }).asMiddleware();

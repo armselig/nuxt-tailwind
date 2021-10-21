@@ -112,4 +112,9 @@ export default defineNuxtConfig({
     hostname: SITE.host,
     gzip: true,
   },
+
+  tailwindcss: {
+    configPath: 'tailwind.config.cjs',
+    viewer: true, // not importable because uses CJS module. See also: https://github.com/nuxt-community/tailwindcss-module/issues/389
+  },
 });

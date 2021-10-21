@@ -1,4 +1,4 @@
-import TAILWIND from '../tailwind.config';
+import TAILWIND from '../tailwind.config.cjs';
 
 export const SITE = {
   title: 'nuxt-tailwind template',
