@@ -10,6 +10,9 @@
     "url": "https://github.com/armselig/nuxt-tailwind/issues"
   },
   "scripts": {
+    "clean": "run-p clean:*",
+    "clean:cache": "rimraf ./.nuxt ./.output",
+    "clean:dist": "rimraf ./dist",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
