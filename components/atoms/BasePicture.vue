@@ -1,21 +1,31 @@
-<template>
-  <img
-    v-if="isWebp"
-    :src="require(`~/assets/images/${src}`)"
-    :alt="alt"
-    :title="title ? title : alt"
-    :loading="loading"
-  />
-  <picture v-else class="picture">
-    <source :srcset="require(`~/assets/images/${src}?webp`)" type="image/webp" />
-    <source :srcset="require(`~/assets/images/${src}`)" :type="`image/${fileType}`" />
+<template functional>
+  <div
+    :ref="data.ref"
+    :class="['picture', data.class, data.staticClass]"
+    :style="[data.style, data.staticStyle]"
+    v-bind="data.attrs"
+    v-on="listeners"
+  >
     <img
-      :src="require(`~/assets/images/${src}`)"
-      :alt="alt"
-      :title="title ? title : alt"
-      :loading="loading"
+      v-if="isWebp"
+      :src="require(`~/assets/images/${props.src}`)"
+      :alt="props.alt"
+      :title="props.title ? props.title : props.alt"
+      :loading="props.loading"
+      class="picture__img"
     />
-  </picture>
+    <picture v-else class="picture__pic">
+      <source :srcset="require(`~/assets/images/${props.src}?webp`)" type="image/webp" />
+      <source :srcset="require(`~/assets/images/${props.src}`)" :type="`image/${fileType}`" />
+      <img
+        :src="require(`~/assets/images/${props.src}`)"
+        :alt="props.alt"
+        :title="props.title ? props.title : props.alt"
+        :loading="props.loading"
+        class="picture__img"
+      />
+    </picture>
+  </div>
 </template>
 
 <script>
@@ -44,25 +54,20 @@ export default {
       fileType: undefined,
     };
   },
-  mounted() {
-    this.handleSrc();
-  },
-  methods: {
-    handleSrc() {
-      const srcArr = this.$props.src.split('.');
-      const fileExt = srcArr.pop().toLowerCase();
-      // const fileName = srcArr.join();
+  handleSrc() {
+    const srcArr = this.$props.src.split('.');
+    const fileExt = srcArr.pop().toLowerCase();
+    // const fileName = srcArr.join();
 
-      switch (fileExt) {
-        case 'jpg':
-          this.fileType = 'jpeg';
-          break;
+    switch (fileExt) {
+      case 'jpg':
+        this.fileType = 'jpeg';
+        break;
 
-        default:
-          this.fileType = fileExt;
-          break;
-      }
-    },
+      default:
+        this.fileType = fileExt;
+        break;
+    }
   },
 };
 </script>
