@@ -1,11 +1,27 @@
 <template>
   <div>
     <h1>Howdy-ho! 👋</h1>
-    <div class="flex flex-wrap justify-between">
+    <section>
+      <ul class="list-disc pl-4">
+        <li><base-link to="subpage">Internal link</base-link></li>
+        <li>
+          <base-link to="#top">Internal anchor link</base-link>
+        </li>
+        <li>
+          <base-link to="https://duckduckgo.com/" target="_blank">External link</base-link>
+        </li>
+        <li>
+          <base-link to="mailto:foo@bar.net" title="Send email to foo@bar.net"
+            >Email link</base-link
+          >
+        </li>
+      </ul>
+    </section>
+    <section class="flex flex-wrap justify-between">
       <base-picture src="dummy-320-1.jpg" width="320" height="320" alt="JPG dummy" />
       <base-picture src="dummy-320-2.png" alt="PNG dummy" />
       <base-picture src="dummy-320-3.webp" width="320" height="320" alt="WebP dummy" />
-    </div>
+    </section>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div id="top" class="page">
     <the-header class="page__header bg-primary text-white" />
     <main class="page__main container mx-auto">
       <Nuxt />
