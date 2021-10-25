@@ -5,6 +5,10 @@ const LANG_ARR = Object.keys(LOCALES).map((locale) => ({
   code: locale,
   iso: LOCALES[locale].iso,
 }));
+const LANG_MSGS = Object.assign(
+  {},
+  ...Object.keys(LOCALES).map((locale) => ({ [locale]: LOCALES[locale].messages }))
+);
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -126,10 +130,7 @@ export default {
     seo: true,
     vueI18n: {
       fallbackLocale: LANG_ARR[0].code,
-      messages: Object.assign(
-        {},
-        ...Object.keys(LOCALES).map((locale) => ({ [locale]: LOCALES[locale].messages }))
-      ),
+      messages: LANG_MSGS,
     },
   },
 };

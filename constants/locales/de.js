@@ -1,5 +1,5 @@
 export const DE = {
-  iso: 'de-DE',
+  iso: 'de',
   messages: {
     PageIndex: {
       title: 'Willkommen',
