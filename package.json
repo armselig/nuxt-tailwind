@@ -17,7 +17,7 @@
     "build": "npm run generate",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint:scripts": "eslint --ext \".js,.jsx,.ts,.tsx,.vue\" --fix --ignore-path .gitignore .",
+    "lint:scripts": "eslint --ext \".js,.jsx,.mjs,.ts,.tsx,.vue\" --fix --ignore-path .gitignore .",
     "lint:styles": "stylelint \"**/*.{vue,css,scss}\" --fix --ignore-path .gitignore",
     "prepare": "husky install",
     "lint": "run-p lint:*"
