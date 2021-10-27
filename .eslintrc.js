@@ -13,12 +13,8 @@ module.exports = {
   rules: {},
   settings: {
     'import/resolver': {
-      alias: {
-        map: [
-          ['@', '.'],
-          ['~', '.'],
-        ],
-        extensions: ['.vue', '.js', '.jsx', '.ts', '.tsx'],
+      nuxt: {
+        extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
       },
     },
   },
