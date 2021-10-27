@@ -1,4 +1,4 @@
-import TAILWIND from '../tailwind.config';
+import { theme } from '../tailwind.config';
 
 export const SITE = {
   title: 'nuxt-tailwind template',
@@ -8,7 +8,7 @@ export const SITE = {
   host: 'http://localhost:3000',
   author: 'Hendrik Neumann <henne@armselig.net>',
   publisher: 'armselig.net',
-  primaryColor: TAILWIND.theme.colors.primary,
+  primaryColor: theme.colors.primary,
 };
 
 export default SITE;

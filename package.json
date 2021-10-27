@@ -14,7 +14,7 @@
     "clean:cache": "rimraf ./.nuxt ./.output",
     "clean:dist": "rimraf ./dist",
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "npm run generate",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:scripts": "eslint --ext \".js,.jsx,.ts,.tsx,.vue\" --fix --ignore-path .gitignore .",
@@ -23,8 +23,15 @@
     "lint": "run-p lint:*"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
-    "*.{css,scss,vue}": "stylelint --fix"
+    "*.{js,jsx,mjs,ts,tsx,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,vue}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{cjs,html,json,md}": "prettier --write"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.3.5",
