@@ -59,6 +59,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@dansmaculotte/nuxt-security', // https://github.com/dansmaculotte/nuxt-security
     '@nuxtjs/pwa', // https://go.nuxtjs.dev/pwa
     '@nuxtjs/sitemap', // * needs to be last (https://sitemap.nuxtjs.org/)
   ],
@@ -109,5 +110,29 @@ export default {
   sitemap: {
     hostname: SITE.host,
     gzip: true,
+  },
+
+  // https://github.com/dansmaculotte/nuxt-security
+  security: {
+    dev: true,
+    csp: {
+      useDefaults: true,
+      directives: {
+        childSrc: ["'none'"],
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        formAction: ["'self'"],
+        frameSrc: ["'none'"],
+        manifestSrc: ["'self'"],
+        mediaSrc: ["'self'"],
+        prefetchSrc: ["'self'"],
+        scriptSrc: ["'unsafe-eval'"],
+        scriptSrcElem: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        workerSrc: ["'none'"],
+      },
+    },
+    referrer: 'same-origin',
+    additionalHeaders: true,
   },
 };
