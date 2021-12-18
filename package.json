@@ -24,12 +24,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx,vue}": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "*.{css,scss,vue}": [
-      "stylelint --fix",
-      "prettier --write"
+      "prettier --write",
+      "stylelint --fix"
     ],
     "*.{cjs,html,json,md}": "prettier --write"
   },
