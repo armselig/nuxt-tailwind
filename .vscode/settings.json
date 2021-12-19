@@ -1,3 +1,4 @@
 {
-  "vetur.completion.autoImport": false
+  "vetur.completion.autoImport": false,
+  "i18n-ally.localesPaths": ["constants/locales"]
 }

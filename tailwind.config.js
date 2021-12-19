@@ -2,8 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
-  purge: ['./components/**/*', './layouts/**/*', './pages/**/*'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./components/**/*', './layouts/**/*', './pages/**/*'],
   theme: {
     colors: {
       black: '#00061d', // deep purple
