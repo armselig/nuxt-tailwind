@@ -45,7 +45,7 @@
     "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@babel/eslint-parser": "^7.16.5",
     "@commitlint/cli": "^13.2.1",
-    "@commitlint/config-conventional": "^13.2.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/html-validator": "^0.6.0",
